@@ -17,9 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from tamamsazeh.views import *
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('projects/',projects),
     path('main_page/',main_page),
-    path('romina/',romina)
+    path('base/',base),
+    path('certifications/',certifications),
+    path('aboutus/',aboutus),
 ]

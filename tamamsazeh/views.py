@@ -5,5 +5,9 @@ def projects(request):
     return render(request=request,template_name='projects.html')
 def main_page(request):
     return render(request=request,template_name='main_page.html')
-def romina(request):
-    return render(request=request,template_name='romina.html')
+def base(request):
+    return render(request=request,template_name='base.html')
+def certifications(request):
+    return render(request=request,template_name='certifications.html')
+def aboutus(request):
+    return render(request=request,template_name='aboutus.html')
