@@ -1,3 +1,3 @@
 $('.carousel').carousel({
-  _interval: 2000
-});
+  interval: 2000
+})
