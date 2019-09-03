@@ -17,14 +17,27 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from tamamsazeh.views import *
-
-
+from django.conf import settings
+from django.views.static import serve
+from django.conf.urls import url
+from tamamsazeh.models import Article
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('projects/',projects),
-    path('main_page/',main_page),
-    path('base/',base),
-    path('certifications/',certifications),
-    path('aboutus/',aboutus),
+    path('projects/', projects),
+    path('main_page/', main_page),
+    path('base/', base),
+    path('certifications/<int:num>', certifications),
+    path('certifications/', certificationsNon),
+    path('aboutus/', aboutus),
+    path('crew/', crew),
+    path('article/', article),
+    path('articleView/<path:link>', articleView),
+    path('blog/', blog),
 ]
+if settings.DEBUG:
+    urlpatterns += [
+        url(r'^media/(?P<path>.*)$', serve, {
+            'document_root': settings.MEDIA_ROOT
+        }),
+    ]

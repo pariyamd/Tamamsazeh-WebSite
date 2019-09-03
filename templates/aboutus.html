@@ -1,4 +1,51 @@
 {% extends "base.html" %}
-{% block content %}
-    ABOUT US
+
+{% block content %}<style>
+body {
+ background-image: url("/static/img/wallpaper/brick-2.jpg");
+background-size: 1800px;
+ background-color: #cccccc;
+}
+.box{
+    border-radius: 10px;
+    padding: 30px;
+    margin: 50px;
+}
+.header-font{
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+}
+.aboutus-font{
+/*
+vokorn
+roboto
+abril fatface
+ubuntu
+old standard tt
+oxygen
+cardo
+cormoran
+crismon*/
+    font-family: 'Cardo', serif;
+    color: black;
+}
+</style>
+   <div class="bg-warning float-right align-right w-50 box">
+
+       <p >
+       <h1 class="header-font aboutus-font" style="font-weight: bold">Tamamsaze co.
+        </h1>
+        <h2 class="aboutus-font">
+            founded in 1995 and by having experienced and professional staff and having
+            grade 3 in building field
+            grade 5 in mechanical works and water project from Management and Programing Organization of IRAN
+            , is ready and willing to cooperate with your organization in various projects and fields,
+            including building and erecting steel structure in industrial project, concrete structure,
+            site preparation, gas and water piping ,instrument installation and maintenance.
+            We are proud that
+            we have been succeeding to get official satisfaction form all of our clients.
+        </h2>
+{#   </h1>#}
+
+   </p>
+   </div>
 {% endblock %}
