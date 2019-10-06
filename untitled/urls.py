@@ -15,7 +15,7 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from tamamsazeh.views import *
 from django.conf import settings
 from django.views.static import serve
@@ -24,16 +24,9 @@ from tamamsazeh.models import Article
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('projects/', projects),
-    path('main_page/', main_page),
-    path('base/', base),
-    path('certifications/<int:num>', certifications),
-    path('certifications/', certificationsNon),
-    path('aboutus/', aboutus),
-    path('crew/', crew),
-    path('article/', article),
-    path('articleView/<path:link>', articleView),
-    path('blog/', blog),
+    path('en/',include('tamamsazeh.urls')),
+    path('fa/',include('tamamsazehFa.urls')),
+    path('',main_page)
 ]
 if settings.DEBUG:
     urlpatterns += [

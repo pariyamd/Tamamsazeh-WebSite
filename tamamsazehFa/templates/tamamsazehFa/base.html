@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    {% block css %} {% endblock %}
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Tamamsazeh{% block title %}{% endblock %}</title>
+
+    <link href="/static/css/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="/static/css/carousel.css" rel="stylesheet">
+
+    <style>
+        .body {
+            text-align: left;
+        }
+
+        .text-titr {
+            font-family: Titr;!important;
+            font-size: x-large;!important;
+        }
+
+        .text-font {
+            font-family: Zar;!important;
+            font-size: x-large;!important;
+        }
+
+        .text-header {
+            font-family: Zar;!important;
+            font-size: 50px;
+        }
+
+        /* font-Titrbold */
+        @font-face {
+            font-family: Titrbold;
+            src: url('http://fonts.codearena.ir/b/titrbold/titrbold.eot');
+            src: url('http://fonts.codearena.ir/b/titrbold/titrbold.eot?#iefix') format('embedded-opentype'),
+            url('http://fonts.codearena.ir/b/titrbold/titrbold.woff') format('woff'),
+            url('http://fonts.codearena.ir/b/titrbold/titrbold.ttf') format('truetype');
+            font-weight: normal;
+        }
+
+        /* font-Yas */
+        @font-face {
+            font-family: Yas;
+            src: url('http://fonts.codearena.ir/b/yas/yas.eot');
+            src: url('http://fonts.codearena.ir/b/yas/yas.eot?#iefix') format('embedded-opentype'),
+            url('http://fonts.codearena.ir/b/yas/yas.woff') format('woff'),
+            url('http://fonts.codearena.ir/b/yas/yas.ttf') format('truetype');
+            font-weight: normal;
+        }
+
+        /* font-Zar */
+        @font-face {
+            font-family: Zar;
+            src: url('http://fonts.codearena.ir/b/zar/zar.eot');
+            src: url('http://fonts.codearena.ir/b/zar/zar.eot?#iefix') format('embedded-opentype'),
+            url('http://fonts.codearena.ir/b/zar/zar.woff') format('woff'),
+            url('http://fonts.codearena.ir/b/zar/zar.ttf') format('truetype');
+            font-weight: normal;
+        }
+
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        #each {
+            text-align: right;
+            float: right;
+            justify-self: right;
+            font-family: Zar;
+            font-size: x-large;
+        }
+    </style>
+    {% block style %}{% endblock %}
+</head>
+<body>
+
+<header>
+    {% block header %}
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            {#    <a class="navbar-brand" href="#">Tamamsazeh</a>#}
+            {#    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">#}
+            {#      <span class="navbar-toggler-icon"></span>#}
+            {#    </button>#}
+            <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarCollapse" style="align-items: end">
+                <ul class="navbar-nav ml-auto flex-nowrap" id="navbarTop"
+                    style="direction: rtl;margin-right: 0!important;float: right;justify-self: right">
+                    <li class="nav-item" id="each">
+                        <a class="nav-link text-white {% block home %} {% endblock %}" href="/fa/main_page">خانه <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" id="each">
+                        <a class="nav-link text-white {% block projects %} {% endblock %}" href="/fa/projects">پروژه
+                            ها</a>
+                    </li>
+                    <li class="nav-item" id="each">
+                        <a class="nav-link text-white {% block certifications %} {% endblock %}"
+                           href="/fa/certifications">مدارک</a>
+                    </li>
+                    <li class="nav-item" id="each">
+                        <a class="nav-link text-white {% block crew %} {% endblock %}" href="/fa/crew">کارکنان</a>
+                    </li>
+
+                    <li class="nav-item" id="each">
+                        <a class="nav-link text-white {% block articles %} {% endblock %}" href="/fa/article">مقالات</a>
+                    </li>
+
+                    <li class="nav-item" id="each">
+                        <a class="nav-link text-white {% block blog %} {% endblock %}" href="/fa/blog">خبر ها</a>
+                    </li>
+
+                    <li class="nav-item" id="each">
+                        <a class="nav-link text-white {% block aboutUs %} {% endblock %}" href="/fa/aboutus">درباره ی
+                            ما</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    {% endblock %}
+</header>
+<div>
+    {% block content %}
+    {% endblock %}
+</div>
+<script src="{% static 'js/jquery-3.js' %}"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="/static/js/bootstrap.js"
+        crossorigin="anonymous"></script>
+<script>
+    $('.carousel').carousel({
+        interval: 2000
+    })
+</script>
+<script>
+    let menus = $('li');
+    for (let i = 0; i < menus.length; i++) {
+        menus.eq(i).click(function () {
+            menus.eq(i).addClass('active');
+        })
+    }
+</script>
+</body>
+</html>
