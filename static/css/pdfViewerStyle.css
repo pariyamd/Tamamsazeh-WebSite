@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: sans-serif;
   font-size: 0.9rem;
-   background-image: url("/static/img/wallpaper/brick-3.jpg");
+  background-color: #ffc107;
 background-size: 1800px;
 
 }
