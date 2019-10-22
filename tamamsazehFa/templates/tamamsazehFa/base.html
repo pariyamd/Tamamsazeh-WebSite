@@ -82,8 +82,7 @@
     </style>
     {% block style %}{% endblock %}
 </head>
-<body>
-
+<body classcd="m-0">
 <header>
     {% block header %}
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -129,6 +128,17 @@
 </header>
 <div>
     {% block content %}
+    {% endblock %}
+</div>
+<div class="m-0 blockquote-footer">
+    {% block footer %}
+        <footer class="footer py-3  mt-auto">
+        <div class="row bg-dark text-warning m-0">
+            <div class="col-4 m-1"><img src="/static/img/icon/placeholder.png">اصفهان خیابان چهار باغ بالا کوچه شهید همتی پلاک ۱۱۰</div>
+            <div class="col-4 m-1"><img src="/static/img/icon/call.png"> +983136633117</div>
+            <div class="col-4 m-1"><img src="/static/img/icon/email.png">tamamsazeh@gmail.com</div>
+        </div>
+        </footer>
     {% endblock %}
 </div>
 <script src="{% static 'js/jquery-3.js' %}"
